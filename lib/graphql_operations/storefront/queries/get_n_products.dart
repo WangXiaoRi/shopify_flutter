@@ -161,6 +161,23 @@ query($metafields: [HasMetafieldsIdentifier!]!, $country: CountryCode, $n : Int,
                 id
                 originalSrc
               }
+              ... on Video {
+                sources {
+                  url
+                  mimeType
+                  format
+                }
+              }
+              ... on ExternalVideo {
+                embedUrl
+                host
+              }
+              ... on Model3d {
+                sources {
+                  url
+                  format
+                }
+              }
             }
           }
         }
